@@ -15,7 +15,7 @@ class ProductsController extends Controller
     public function index()
     {
         $data = [
-            'data' => [
+            'products' => [
                 [
                     'name' => 'product 1',
                     'price' => '$10'
