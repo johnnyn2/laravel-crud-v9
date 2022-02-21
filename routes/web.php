@@ -21,8 +21,10 @@ Route::get('/home', function() {
     return view('home');
 });
 Route::get('/products', [ProductsController::class, 'index']);
-Route::get('/products/{id}', [ProductsController::class, 'show']);
-Route::get('/products/{name}', [ProductsController::class, 'show']);
+Route::get('/products/{name}/{id}', [ProductsController::class, 'show'])->where([
+    'name' => '[a-zA-Z0-9-]+',
+    'id' => '[0-9]+'
+]);
 Route::get('/string', function() {
     return 'this is a string';
 });
