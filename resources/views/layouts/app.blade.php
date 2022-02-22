@@ -14,6 +14,9 @@
             color: red;
             font-weight: bold;
         }
+        .header {
+            display: flex;
+        }
     </style>
 </head>
 <body>

@@ -1,3 +1,4 @@
+<img src="{{ URL('images/laravel-crud-v9-icon.jpg') }}" sizes="20" alt="">
 <ul>
     <li>
         <a href="/home" class="{{ request()->is('home') ? 'active' : '' }}">Home</a>
