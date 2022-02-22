@@ -20,12 +20,19 @@ class ProductsController extends Controller
                 [
                     'name' => 'product 1',
                     'price' => '$10',
-                    'tag' => 'toys'
+                    'tag' => 'toys',
+                    'target' => 'children'
                 ],
                 [
                     'name' => 'product 2',
-                    'price' => '$20'
-                ]
+                    'price' => '$20',
+                    'target' => 'teenager'
+                ],
+                [
+                    'name' => 'product 2',
+                    'price' => '$30',
+                    'target' => 'adult'
+                ],
             ]
         ];
         return view('products.products', $data);
