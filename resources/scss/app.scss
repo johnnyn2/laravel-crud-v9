@@ -1,0 +1,10 @@
+$primarycolor: darkseagreen;
+
+body {
+    background: url('/images/background.jpg') no-repeat center center fixed;
+    background-size: 100% 100%;
+}
+
+.primary-color {
+    color: $primarycolor;
+}
