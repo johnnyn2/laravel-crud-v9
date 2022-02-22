@@ -20,26 +20,33 @@ Route::get('/', function () {
 Route::get('/home', function() {
     return view('home');
 });
-Route::get('/products', [ProductsController::class, 'index']);
+// route to controller method with route name
+Route::get('/products', [ProductsController::class, 'index'])->name('products');
+// route to controller method with path variables and pattern
 Route::get('/products/{name}/{id}', [ProductsController::class, 'show'])->where([
     'name' => '[a-zA-Z0-9-]+',
     'id' => '[0-9]+'
 ]);
+// route to return a string
 Route::get('/string', function() {
     return 'this is a string';
-});
+})->name('string');
+// route to return an array
 Route::get('/array', function() {
     return ['this', 'is', 'array'];
 });
+// route to return a json object
 Route::get('/json', function() {
     return response()->json([
         'name' => 'Laravel-crud-v9',
         'framework' => 'laravel'
     ]);
 });
+// route to redirect route
 Route::get('/redirect', function() {
     return redirect('/redirectedPage');
 });
 Route::get('/redirectedPage', function() {
     return 'redirected';
 });
+

@@ -4,5 +4,7 @@
     @foreach ($products as $product)
         <p>Name: {{ $product['name'] }}</p>
         <p>Price: {{ $product['price'] }}</p>
-    @endforeach 
+    @endforeach
+    <a href="{{  route('products') }}">Products</a>
+    <a href="{{  route('string') }}">String route</a>
 @endsection
