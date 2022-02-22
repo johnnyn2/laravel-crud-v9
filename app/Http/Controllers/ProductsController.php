@@ -19,7 +19,8 @@ class ProductsController extends Controller
             'products' => [
                 [
                     'name' => 'product 1',
-                    'price' => '$10'
+                    'price' => '$10',
+                    'tag' => 'toys'
                 ],
                 [
                     'name' => 'product 2',
