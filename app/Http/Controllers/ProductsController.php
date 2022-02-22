@@ -33,7 +33,8 @@ class ProductsController extends Controller
                     'price' => '$30',
                     'target' => 'adult'
                 ],
-            ]
+            ],
+            'empty' => []
         ];
         return view('products.products', $data);
     }

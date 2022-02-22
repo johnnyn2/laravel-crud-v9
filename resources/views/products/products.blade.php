@@ -1,4 +1,10 @@
 @extends('layouts.app')
+{{-- 
+    for loop
+    foreach loop
+    forelse loop <- display other output when the array is empty
+    while loop
+--}}
 @section('body')
     <h2>Product Info:</h2>
     @foreach ($products as $product)
@@ -27,6 +33,11 @@
             </p>
         </div>
     @endforeach
+    @forelse ($empty as $e)
+        <p>{{ $e }}</p>        
+    @empty
+        <h3>Empty array in forelse loop</h3>
+    @endforelse
     <a href="{{  route('products') }}">Products</a>
     <a href="{{  route('string') }}">String route</a>    
 @endsection
