@@ -1,2 +1,1 @@
-
-footer
+footer {{ print_r(URL('')) }}
