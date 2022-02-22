@@ -1,4 +1,4 @@
 @extends('layouts.app')
 @section('body')
-laravel-crud-v9
+    this is about page
 @endsection

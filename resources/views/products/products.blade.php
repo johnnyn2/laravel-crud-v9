@@ -1,4 +1,4 @@
-@extends('common')
+@extends('layouts.app')
 @section('body')
     <h2>Product Info:</h2>
     @foreach ($products as $product)

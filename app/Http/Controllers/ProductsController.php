@@ -60,7 +60,7 @@ class ProductsController extends Controller
     public function show(Product $product)
     {
         
-        return 'specific product';
+        return view('products.product');
     }
 
     /**

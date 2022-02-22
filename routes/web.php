@@ -27,6 +27,12 @@ Route::get('/products/{name}/{id}', [ProductsController::class, 'show'])->where(
     'name' => '[a-zA-Z0-9-]+',
     'id' => '[0-9]+'
 ]);
+Route::get('/about', function() {
+    return view('pages.about');
+});
+Route::get('/introduction', function() {
+    return view('pages.introduction');
+});
 // route to return a string
 Route::get('/string', function() {
     return 'this is a string';
