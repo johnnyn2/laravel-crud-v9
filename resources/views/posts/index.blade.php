@@ -30,6 +30,12 @@
                 </tr>
             </table>
             <a href="/posts/{{ $post['id'] }}/edit">Edit</a>
+            <form action="/posts/{{ $post['id'] }}" method="POST">
+                @csrf
+                {{-- transform POST request to DELETE request --}}
+                @method('delete')
+                <button type="submit" style="color: red;">Delete</button>
+            </form>
         </div>        
     @endforeach
 @endsection
