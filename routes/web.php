@@ -28,6 +28,7 @@ Route::get('/products/{name}/{id}', [ProductsController::class, 'show'])->where(
     'name' => '[a-zA-Z0-9-]+',
     'id' => '[0-9]+'
 ]);
+// create CRUD routes mapped to PostController
 Route::resource('/posts', PostController::class);
 Route::get('/about', function() {
     return view('pages.about');

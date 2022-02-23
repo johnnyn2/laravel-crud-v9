@@ -145,7 +145,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('posts.create');
     }
 
     /**
@@ -156,7 +156,18 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // method one to save a post. Good to use when you need custom logic before saving the model
+        // $post = new Post;
+        // $post->title = $request->input('title');
+        // $post->body = $request->input('body');
+        // $post->save();
+
+        // method two to directly save the model
+        $post = Post::create([
+            'title' => $request->input('title'),
+            'body' => $request->input('body')
+        ]);
+        return redirect('/posts');
     }
 
     /**

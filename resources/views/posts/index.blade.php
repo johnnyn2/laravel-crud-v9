@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('body')
+    <a href="/posts/create">Create a post</a>
     <h3>Total</h3>
     <p>{{ $total }}</p>
     <h3>Avg</h3>
