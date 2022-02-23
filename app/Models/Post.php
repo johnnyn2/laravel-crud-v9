@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     use HasFactory;
+
+    protected $table = 'posts';
+    protected $primaryKey = 'id';
+    protected $timestamp = true;
+    protected $dateFormat = 'YYYY-MM-DD:hh:mm:ss';
 }

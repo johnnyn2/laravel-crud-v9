@@ -16,9 +16,9 @@ class PostController extends Controller
     public function index()
     {
         // 1. select where id = $id
-        $posts = DB::select('select * from posts WHERE id = :id', [
-            'id' => 7
-        ]);
+        // $posts = DB::select('select * from posts WHERE id = :id', [
+        //     'id' => 7
+        // ]);
         
         // 2. select where id = $id
         // $id = 7;
@@ -113,7 +113,29 @@ class PostController extends Controller
         // $posts = DB::table('posts')
         //     ->where('id', 13)
         //     ->delete();
-        dd($posts);
+        // dd($posts);
+
+        // Eloquent
+        // 1. select all
+        // $posts = Post::all();
+        
+        // 2. where
+        $posts = Post::where('id', '>', 3)->get();
+
+        //3. count
+        // Post::count();
+
+        // 4. sum
+        $total = Post::sum('id');
+
+        // 5. avg
+        $avg = Post::avg('id');
+
+        return view('posts.index', [
+            'posts' => $posts,
+            'total' => $total,
+            'avg' => $avg
+        ]);
     }
 
     /**
