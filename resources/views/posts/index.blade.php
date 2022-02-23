@@ -29,6 +29,7 @@
                     <td>{{ $post['updated_at'] }}</td>
                 </tr>
             </table>
+            <a href="/posts/{{ $post['id'] }}/edit">Edit</a>
         </div>        
     @endforeach
 @endsection
