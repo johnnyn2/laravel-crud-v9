@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,7 @@ Route::get('/products/{name}/{id}', [ProductsController::class, 'show'])->where(
     'name' => '[a-zA-Z0-9-]+',
     'id' => '[0-9]+'
 ]);
+Route::get('/posts', [PostController::class, 'index'])->name('posts');
 Route::get('/about', function() {
     return view('pages.about');
 });
