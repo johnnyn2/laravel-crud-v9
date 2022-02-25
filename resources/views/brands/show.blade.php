@@ -4,7 +4,7 @@
     <p>{{ $brand['name'] }}</p>
     <h1>Description</h1>
     <p>{{ $brand['description'] }}</p>
-    <h1>Products</h1>
+    <h1>All products of brand {{ $brand['name'] }}</h1>
     <table>
         <thead>
             <tr>
@@ -13,6 +13,7 @@
                 <th>Price</th>
                 <th>Tag</th>
                 <th>Target</th>
+                <th>Manufactuer</th>
             </tr>
         </thead>
         <tbody>
@@ -23,6 +24,13 @@
                     <td>{{ $product['price'] }}</td>
                     <td>{{ $product['tag'] }}</td>
                     <td>{{ $product['target'] }}</td>
+                    <td>
+                        @foreach ($brand->manufacturers as $manufacturer)
+                            @if ($manufacturer['product_id'] == $product['id'])
+                                {{ $manufacturer['name'] }}
+                            @endif                            
+                        @endforeach
+                    </td>
                 </tr> 
             @empty
                 <h3>This brand has no product</h3>
