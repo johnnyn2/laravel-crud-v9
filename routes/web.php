@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BrandController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\PostController;
@@ -21,6 +22,7 @@ Route::get('/', function () {
 Route::get('/home', function() {
     return view('home');
 });
+Route::get('/brands', [BrandController::class, 'index'])->name('brands');
 // route to controller method with route name
 Route::get('/products', [ProductsController::class, 'index'])->name('products');
 // route to controller method with path variables and pattern

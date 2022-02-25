@@ -10,6 +10,9 @@
         <a href="/posts" class="{{ request()->is('posts') || request()-> is('posts/*') ? 'active' : '' }}">Posts</a>
     </li>
     <li>
+        <a href="/brands" class="{{ request()->is('brands') || request()-> is('brands/*') ? 'active' : '' }}">Brands</a>
+    </li>
+    <li>
         <a href="/products" class="{{ request()->is('products') || request()-> is('products/*') ? 'active' : '' }}">Products</a>
     </li>
     <li>
