@@ -22,7 +22,7 @@ Route::get('/', function () {
 Route::get('/home', function() {
     return view('home');
 });
-Route::get('/brands', [BrandController::class, 'index'])->name('brands');
+Route::resource('/brands', BrandController::class);
 // route to controller method with route name
 Route::get('/products', [ProductsController::class, 'index'])->name('products');
 // route to controller method with path variables and pattern
