@@ -13,4 +13,6 @@ class Post extends Model
     protected $primaryKey = 'id';
     protected $timestamp = true;
     protected $fillable = ['title', 'body'];
+    // attributes we want to hide when passing the model out to frontend
+    protected $hidden = [];
 }
