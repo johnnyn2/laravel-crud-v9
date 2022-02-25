@@ -120,7 +120,7 @@ class PostController extends Controller
         // $posts = Post::all();
         
         // 2. where
-        $posts = Post::where('id', '>', 3)->get();
+        $posts = Post::where('id', '>', 3)->get()->toArray();
 
         //3. count
         // Post::count();
