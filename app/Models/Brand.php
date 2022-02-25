@@ -19,6 +19,8 @@ class Brand extends Model
         return $this->hasMany(Product::class);
     }
 
+    // not a good example to use manufacturer table as product should have many-to-1 relationship to manufacturer
+    // but it is just a demonstration on how to use hasManyThrough relationship
     // define hasManyThrough relationship for Brand class to get all Manufacturers through Product class 
     public function manufacturers()
     {
