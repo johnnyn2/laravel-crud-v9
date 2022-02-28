@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Rules\Uppercase;
 
 class PostController extends Controller
 {
@@ -156,6 +157,12 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+        // request validation
+        $request->validate([
+            'title' => ['required', 'string', new Uppercase], // required field and should be a string
+            'body' => 'required|string',
+        ]);
+
         // method one to save a post. Good to use when you need custom logic before saving the model
         // $post = new Post;
         // $post->title = $request->input('title');

@@ -8,4 +8,9 @@
         <input type="text" name="body">
         <button type="submit">Submit</button>
     </form>
+    @if ($errors->any())
+        @foreach ($errors->all() as $error)
+            <div>{{ $error }}</div>
+        @endforeach    
+    @endif
 @endsection
