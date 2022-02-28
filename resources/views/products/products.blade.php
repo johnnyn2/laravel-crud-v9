@@ -31,6 +31,7 @@
                         > 18
                 @endswitch
             </p>
+            <p><a href="/products/{{ $product['id'] }}">View</a></p>
         </div>
     @endforeach
     @forelse ($empty as $e)

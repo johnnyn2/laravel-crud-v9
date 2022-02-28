@@ -13,8 +13,13 @@ class Product extends Model
     protected $primaryKey = 'id';
     protected $fillable = ['name', 'price', 'tag', 'target', 'brand_id'];
     protected $timestamp = true;
+    protected $hidden = [];
 
     public function brand() {
         return $this->belongsTo(Brand::class);
+    }
+
+    public function categories() {
+        return $this->belongsToMany(Category::class);
     }
 }
