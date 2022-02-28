@@ -6,6 +6,7 @@ use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Rules\Uppercase;
+use App\Http\Requests\PostValidationRequest;
 
 class PostController extends Controller
 {
@@ -155,13 +156,10 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PostValidationRequest $request)
     {
         // request validation
-        $request->validate([
-            'title' => ['required', 'string', new Uppercase], // required field and should be a string
-            'body' => 'required|string',
-        ]);
+        $request->validated();
 
         // method one to save a post. Good to use when you need custom logic before saving the model
         // $post = new Post;
@@ -206,8 +204,11 @@ class PostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+    public function update(PostValidationRequest $request, Post $post)
     {
+        // request validation
+        $request->validated();
+
         $post->title = $request->input('title');
         $post->body = $request->input('body');
         $post->save();

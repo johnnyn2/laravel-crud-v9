@@ -10,7 +10,7 @@
     </form>
     @if ($errors->any())
         @foreach ($errors->all() as $error)
-            <div>{{ $error }}</div>
+            <p style="color: red;">{{ $error }}</p>  
         @endforeach    
     @endif
 @endsection
