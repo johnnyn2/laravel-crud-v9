@@ -9,6 +9,10 @@
         <div>
             <table>
                 <tr>
+                    <td>user_id</td>
+                    <td>{{ $post['user_id'] }}</td>
+                </tr>
+                <tr>
                     <td>id</td>
                     <td>{{ $post['id'] }}</td>
                 </tr>
@@ -37,13 +41,15 @@
                     <td>{{ $post['updated_at'] }}</td>
                 </tr>
             </table>
-            <a href="/posts/{{ $post['id'] }}/edit">Edit</a>
-            <form action="/posts/{{ $post['id'] }}" method="POST">
-                @csrf
-                {{-- transform POST request to DELETE request --}}
-                @method('delete')
-                <button type="submit" style="color: red;">Delete</button>
-            </form>
+            @if (isset(Auth::user()->id) && Auth::user()->id == $post['user_id'])
+                <a href="/posts/{{ $post['id'] }}/edit">Edit</a>
+                <form action="/posts/{{ $post['id'] }}" method="POST">
+                    @csrf
+                    {{-- transform POST request to DELETE request --}}
+                    @method('delete')
+                    <button type="submit" style="color: red;">Delete</button>
+                </form>
+            @endif
         </div>        
     @endforeach
 @endsection

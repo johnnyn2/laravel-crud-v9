@@ -10,6 +10,15 @@ use App\Http\Requests\PostValidationRequest;
 
 class PostController extends Controller
 {
+    // may not the best way to add middleware in PostController. We can add middleware to route in web.php
+    // but we are using Route::resource() for PostController, so it is better to declare the middleware in
+    // controller so that it can restrict user access down to certain controller method
+    public function __construct() {
+        $this->middleware('auth', [
+            'except' => ['index', 'show'],
+        ]);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -189,6 +198,7 @@ class PostController extends Controller
 
         // method two to directly save the model
         $post = Post::create([
+            'user_id' => auth()->id(),
             'title' => $request->input('title'),
             'body' => $request->input('body'),
             'picture_path' => $newImageName,
