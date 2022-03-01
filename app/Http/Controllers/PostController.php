@@ -158,8 +158,28 @@ class PostController extends Controller
      */
     public function store(PostValidationRequest $request)
     {
-        // request validation
-        $request->validated();
+        // methods we can use on $request->file()
+        // guessExtension()
+        // guessClientExtension
+        // getMimeType()
+        // store()
+        // asStore()
+        // storePublicly()
+        // move()
+        // getClientOriginalName()
+        // getClientMimeType()
+        // getSize()
+        // getError()
+        // isValid()
+
+        // get the upload file extension, e.g. jpg / png/ pdf
+        // $fileExtension = $request->file('picture')->guessExtension();
+
+        // we don't want people to upload image with the same name
+        $picture = $request->file('picture');
+        $newImageName = time() . '-' . $picture->getClientOriginalName();
+        // move the picture to public/upload_pictures folder
+        $picture->move(public_path('upload_pictures'), $newImageName);
 
         // method one to save a post. Good to use when you need custom logic before saving the model
         // $post = new Post;
@@ -170,7 +190,8 @@ class PostController extends Controller
         // method two to directly save the model
         $post = Post::create([
             'title' => $request->input('title'),
-            'body' => $request->input('body')
+            'body' => $request->input('body'),
+            'picture_path' => $newImageName,
         ]);
         return redirect('/posts');
     }
@@ -206,9 +227,6 @@ class PostController extends Controller
      */
     public function update(PostValidationRequest $request, Post $post)
     {
-        // request validation
-        $request->validated();
-
         $post->title = $request->input('title');
         $post->body = $request->input('body');
         $post->save();

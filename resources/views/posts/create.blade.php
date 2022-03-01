@@ -1,7 +1,9 @@
 @extends('layouts.app')
 @section('body')
-    <form action="/posts" method="POST" style="display: flex; flex-direction: column;">
+    <form action="/posts" method="POST" enctype="multipart/form-data" style="display: flex; flex-direction: column;">
         @csrf
+        <label for="picture">Picture</label>
+        <input type="file" name="picture" id="">
         <label for="title">Title</label>
         <input type="text" name="title">
         <label for="body">Body</label>

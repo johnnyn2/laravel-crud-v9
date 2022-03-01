@@ -12,6 +12,14 @@
                     <td>id</td>
                     <td>{{ $post['id'] }}</td>
                 </tr>
+                @if (!empty($post['picture_path']))
+                <tr>
+                    <td>cover photo</td>
+                    <td>
+                        <img width="50" height="50" src="{{ asset('upload_pictures/'.$post['picture_path']) }}" alt="">
+                    </td>
+                </tr>
+                @endif
                 <tr>
                     <td>title</td>
                     <td>{{ $post['title'] }}</td>

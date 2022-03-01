@@ -25,6 +25,7 @@ class PostValidationRequest extends FormRequest
     public function rules()
     {
         return [
+            'picture' => ['required', 'mimes:png,jpg,jpeg', 'max:5048'], // 5048 is in KB size
             'title' => ['required', 'string', new Uppercase], // required field and should be a string
             'body' => 'required|string',
         ];
