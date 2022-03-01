@@ -1,5 +1,5 @@
-@extends('layouts.app')
-@section('body')
+@extends('layouts.root')
+@section('content')
     <form action="/posts" method="POST" enctype="multipart/form-data" style="display: flex; flex-direction: column;">
         @csrf
         <label for="picture">Picture</label>

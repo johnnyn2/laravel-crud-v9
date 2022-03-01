@@ -1,5 +1,5 @@
-@extends('layouts.app')
-@section('body')
+@extends('layouts.root')
+@section('content')
     <h1>Name</h1>
     <p>{{ $brand['name'] }}</p>
     <h1>Description</h1>

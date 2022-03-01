@@ -1,5 +1,5 @@
-@extends('layouts.app')
-@section('body')
+@extends('layouts.root')
+@section('content')
     <a href="/posts/create">Create a post</a>
     <h3>Total</h3>
     <p>{{ $total }}</p>

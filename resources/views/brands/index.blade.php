@@ -1,5 +1,5 @@
-@extends('layouts.app')
-@section('body')
+@extends('layouts.root')
+@section('content')
     <table>
         <thead>
             <th>Name</th>

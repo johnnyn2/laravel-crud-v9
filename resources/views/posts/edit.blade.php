@@ -1,5 +1,5 @@
-@extends('layouts.app')
-@section('body')
+@extends('layouts.root')
+@section('content')
     <form action="/posts/{{ $post['id'] }}" method="POST" style="display: flex; flex-direction: column;">
         @csrf
         {{-- transform a POST request to a PUT request --}}

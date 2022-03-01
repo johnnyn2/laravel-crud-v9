@@ -1,11 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.root')
 {{-- 
     for loop
     foreach loop
     forelse loop <- display other output when the array is empty
     while loop
 --}}
-@section('body')
+@section('content')
     <h2>Product Info:</h2>
     @foreach ($products as $product)
         <div style="border: 1px solid black;">

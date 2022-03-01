@@ -1,4 +1,4 @@
-@extends('layouts.app')
-@section('body')
+@extends('layouts.root')
+@section('content')
     This is my laravel-crud-project.
 @endsection

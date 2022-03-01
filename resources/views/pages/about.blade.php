@@ -1,4 +1,4 @@
-@extends('layouts.app')
-@section('body')
+@extends('layouts.root')
+@section('content')
     this is about page
 @endsection

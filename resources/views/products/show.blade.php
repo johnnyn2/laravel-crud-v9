@@ -1,5 +1,5 @@
-@extends('layouts.app')
-@section('body')
+@extends('layouts.root')
+@section('content')
     {{ request('name').' '.request('id') }}
     <h3>Product Info</h3>
     <table>
